@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 @Entity
 public class OrderLog {
@@ -32,9 +31,6 @@ public class OrderLog {
 
 	@Column(name = "order_date")
 	private Date orderDate;
-	
-	@OneToOne(mappedBy="orderLog")
-	private PaymentLog paymentLog;
 
 	public OrderLog() {
 	}
@@ -74,13 +70,5 @@ public class OrderLog {
 
 	public void setItemOrder(List<ItemOrder> itemOrder) {
 		this.itemOrder = itemOrder;
-	}
-
-	public PaymentLog getPaymentLog() {
-		return paymentLog;
-	}
-
-	public void setPaymentLog(PaymentLog paymentLog) {
-		this.paymentLog = paymentLog;
 	}	
 }

@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 public class OrderCreationDto implements Serializable {
-
+	private static final long serialVersionUID = 1L;
+	
 	private List<OrderDto> items;
 	private User user;
 
@@ -28,6 +29,4 @@ public class OrderCreationDto implements Serializable {
 	public String toString() {
 		return "OrderCreationDto [items=" + items + ", user=" + user + "]";
 	}
-	
-	
 }

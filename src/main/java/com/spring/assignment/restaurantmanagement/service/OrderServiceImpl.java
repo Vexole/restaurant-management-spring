@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.assignment.restaurantmanagement.entity.OrderLog;
 import com.spring.assignment.restaurantmanagement.repository.OrderLogRepository;
+import com.spring.assignment.restaurantmanagement.utils.UserUtils;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -16,7 +17,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public List<OrderLog> getAllOrders() {
-		return (List<OrderLog>) orderLog.findAll();
+		return (List<OrderLog>) orderLog.findByUserName(UserUtils.getUserName());
 	}
 
 	@Override

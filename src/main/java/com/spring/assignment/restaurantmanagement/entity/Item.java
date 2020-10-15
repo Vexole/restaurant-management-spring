@@ -29,9 +29,6 @@ public class Item {
 	@JoinColumn(name = "item_options_id")
 	private ItemOptions itemOptions;
 
-//	@ManyToMany(mappedBy = "items")
-//	private List<ItemOrder> itemOrders;
-
 	public Item() {
 	}
 
@@ -39,13 +36,6 @@ public class Item {
 		this.itemName = itemName;
 		this.status = status;
 	}
-
-//	public void addItemOrder(ItemOrder itemOrder) {
-//		if (itemOrders == null) {
-//			itemOrders = new ArrayList<ItemOrder>();
-//		}
-//		itemOrders.add(itemOrder);
-//	}
 
 	public int getId() {
 		return id;
@@ -84,15 +74,4 @@ public class Item {
 		return "Item [id=" + id + ", itemName=" + itemName + ", status=" + status + ", itemOptions=" + itemOptions
 				+ "]";
 	}
-
-//	public List<ItemOrder> getItemOrder() {
-//		return itemOrders;
-//	}
-//
-//	public void setItemOrder(List<ItemOrder> itemOrder) {
-//		this.itemOrders = itemOrder;
-//	}
-	
-	
-
 }

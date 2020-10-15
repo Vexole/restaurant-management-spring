@@ -81,4 +81,10 @@ public class PaymentLog {
 	public void setTotal(BigDecimal total) {
 		this.total = total;
 	}
+
+	@Override
+	public String toString() {
+		return "PaymentLog [id=" + id + ", payment=" + payment + ", orderLog=" + orderLog + ", status=" + status
+				+ ", total=" + total + "]";
+	}
 }

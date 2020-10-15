@@ -122,6 +122,4 @@ public class User {
 				+ ", email=" + email + ", status=" + status + ", createdDate=" + createdDate + ", userPassword="
 				+ userPassword + "]";
 	}
-	
-	
 }
