@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.assignment.restaurantmanagement.entity.User;
-import com.spring.assignment.restaurantmanagement.repository.UserRepository;
+import com.spring.assignment.restaurantmanagement.service.UserService;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userService;
 
 	@RequestMapping("/createUser")
 	private ResponseEntity<String> createUser(@RequestBody User user) {
-		userRepository.save(user);
+		userService.createUser(user);
 		return ResponseEntity.status(HttpStatus.OK).body("Created");
 	}
 	
 	@RequestMapping("/getAllUsers")
 	private ResponseEntity<Iterable<User>> getAllUsers() {
-		return ResponseEntity.ok(userRepository.findAll());
+		return ResponseEntity.ok(userService.getAllUsers());
 	}
 }

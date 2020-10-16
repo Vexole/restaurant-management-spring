@@ -35,34 +35,7 @@ public class HomeController {
 		user.setCreatedDate(new java.sql.Date(new Date().getTime()));
 		user.setUserPassword(new UserPassword(registerDto.getPassword(), 0, Status.ACTIVE.toString(), new java.sql.Date(new Date().getTime())));
 		userRepository.save(user);
-		
-		
 		return "dashboard";
 	}
 
-	@RequestMapping("/data")
-	public String getData(@RequestParam("name") String name) {
-		System.out.println(name);
-		return "home";
-	}
-
-	@RequestMapping("/home")
-	public String home() {
-		return "home";
-	}
-
-	@RequestMapping("/login")
-	public String login() {
-		return "login-form";
-	}
-
-	@RequestMapping("/register")
-	public String register(Model model) {
-		return "registration";
-	}
-
-	@RequestMapping("/dashboard")
-	public String home(Model model) {
-		return "dashboard";
-	}
 }
